@@ -1,0 +1,728 @@
+	/**
+ * HTML5 ✰ Boilerplate
+ *
+ * style.css contains a reset, font normalization and some base styles.
+ *
+ * Credit is left where credit is due.
+ * Much inspiration was taken from these projects:
+ * - yui.yahooapis.com/2.8.1/build/base/base.css
+ * - camendesign.com/design/
+ * - praegnanz.de/weblog/htmlcssjs-kickstart
+ */
+
+
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+
+/**
+ * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+
+body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif; }
+
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+
+/**
+ * Minimal base styles.
+ */
+
+/* Always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td { vertical-align: top; }
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre {
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
+}
+
+textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+
+/* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* Colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid {
+   border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+/* j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+/* Make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/* Bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/**
+ * You might tweak these..
+ */
+
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */
+}
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+a, a:active, a:visited { color: #fff; }
+a:hover { color: #b3b3b3; }
+
+
+/**
+ * Primary styles
+ *
+ * Author: 
+ */
+
+
+body{
+background: url(../img/bg-04.png);
+-moz-background-size: 100% auto !important; 
+background-size: 100% auto !important;
+margin: 0; padding: 0; 
+-o-background-size: 100% auto;
+ -webkit-background-size: 100% auto; 
+ khtml-background-size: 100% auto;
+}
+
+#header {
+    margin: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.bold{
+font-weight: bold;
+}
+
+#logo{
+position: relative;}
+
+#menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -137px;
+    width: 235px;
+}
+
+#menu li {
+    border-bottom: 1px solid #000;
+    list-style: none outside none;
+    margin: 0;
+    
+}
+
+#menu ul{
+margin: 0;
+}
+#menu li a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 6px 0 3px;
+    color: #000;
+}
+
+#menu li a:hover{
+color: #fff;
+}
+
+#byline{
+position: fixed;
+}
+
+#main{
+padding-left: 415px; 
+position: relative;
+display: block;
+z-index: 0;
+}
+
+#tidslinje{
+position: relative;
+top: 172px;
+margin-bottom: 50px;
+}
+
+#tidslinje1, #tidslinje2, #tidslinje3, #tidslinje4 {
+    background: none repeat scroll 0 0 #444444;
+    color: white;
+    display: block;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 150%;
+    margin-left: 0;
+    margin-right: 10px;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,0.5);
+    border-radius: 2px;
+  /*  border: solid 1px #383838; 
+    border-top: solid 1px #4C4C4C;*/
+}
+
+
+#tidslinje1 {
+    background: none no-repeat scroll 0 0 #444444;
+    float: left;
+    font-size: 17px;
+    margin-right: 10px;
+    max-width: 350px;
+    padding: 40px 20px 30px 40px;
+}
+
+#tidslinje2 {
+    background: url("../img/1-oppe.png") no-repeat scroll 0 0 #444444;
+    float: right;
+    margin-left: 0;
+    margin-top: 150px;
+    max-width: 300px;
+    padding: 80px 20px 30px 80px;
+    margin-right: 50px;
+}
+
+#tidslinje3 {
+    background: url("../img/2-oppe.png") no-repeat scroll 0 0 #444444;
+    float: right;
+    margin-left: 30px;
+    margin-top: 250px;
+    max-width: 300px;
+    padding: 80px 20px 30px 80px;
+    margin-right: 110px;
+    margin-left: 150px;
+}
+
+#tidslinje4 {
+    background: url("../img/3-oppe.png") no-repeat scroll 0 0 #444444;
+    float: left;
+    margin-top: 250px;
+    max-width: 330px;
+    padding: 80px 20px 30px 80px;
+    margin-bottom: 50px;
+}
+
+#tidslinje p{
+margin-bottom: 10px;
+}
+
+#bestilling {
+    background: url("../img/12bestillingsverk.png") repeat scroll 0 0 transparent;
+    height: 478px;
+    position: relative;
+    text-indent: -99999px;
+    top: 250px;
+    width: 69px;
+}
+
+#workshops {
+    background: url("../img/5workshops.png") repeat scroll 0 0 transparent;
+    height: 325px;
+    margin-left: 87px;
+    position: relative;
+    text-indent: -99999px;
+    top: 250px;
+    width: 46px;
+}
+
+#dogmer {
+    background: url("../img/3dogmer.png") repeat scroll 0 0 transparent;
+    height: 256px;
+    margin-left: 157px;
+    position: relative;
+    text-indent: -99999px;
+    top: 250px;
+    width: 47px;
+}
+
+#festivaler {
+    background: url("../img/5festivaler.png") repeat scroll 0 0 transparent;
+    height: 275px;
+    margin-left: 228px;
+    position: relative;
+    text-indent: -99999px;
+    top: 250px;
+    width: 47px;
+}
+
+#kit {
+    background: url("../img/1kit.png") repeat scroll 0 0 transparent;
+    height: 135px;
+    margin-left: 300px;
+    position: relative;
+    text-indent: -99999px;
+    top: 250px;
+    width: 49px;
+}
+
+#muligheter {
+    background: url("../img/uttalige-muligheter.png") repeat scroll 0 0 transparent;
+    height: 34px;
+    position: relative;
+    text-indent: -99999px;
+    top: 194px;
+    width: 343px;
+}
+
+#pakken, #skjema {
+    background: none repeat scroll 0 0 #444444;
+    color: white;
+    display: block;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 150%;
+    margin-left: 0;
+    margin-right: 10px;
+	max-width: 780px;
+	min-width: 400px;
+    padding: 20px;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,0.5);
+    border-radius: 2px;
+    border: solid 1px #383838;
+    border-top: solid 1px #4C4C4C;
+	position: relative;
+    top: 223px;
+    z-index: 1;
+}
+
+form{
+padding-bottom: 50px;
+}
+
+#pakken p, #bidragsytere p{
+margin-bottom: 20px;
+}
+
+
+.ytere {
+    background: url("../img/vister.jpg") no-repeat scroll left bottom #444444;
+    color: white;
+    display: block;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 120%;
+    margin-left: 0;
+    margin-right: 10px;
+    min-width: 200px;
+    min-height: 259px;
+    max-width: 500px;
+    padding: 20px 20px 20px 300px;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,0.5);
+    border-radius: 2px;
+    border: solid 1px #383838;
+    border-top: solid 1px #4C4C4C;
+    position: relative;
+    margin-bottom: 30px;
+
+
+}
+
+#vister{background: url("../img/vister.jpg") no-repeat scroll left bottom #444444;}
+#hemmeligtempo{background: url("../img/hemmeligtempo.jpg") no-repeat scroll left bottom #444444;}
+#pedersen{background: url("../img/pedersen.jpg") no-repeat scroll left bottom #444444;}
+#kuraas{background: url("../img/kuraas.jpg") no-repeat scroll left bottom #444444;}
+#lockert{background: url("../img/lockert.jpg") no-repeat scroll left bottom #444444;}
+#foros{background: url("../img/foros.jpg") no-repeat scroll left bottom #444444;}
+#haverkamp{background: url("../img/haverkamp.jpg") no-repeat scroll left bottom #444444;}
+#sletteland{background: url("../img/sletteland.jpg") no-repeat scroll left bottom #444444;}
+#andersen{background: url("../img/andersen.jpg") no-repeat scroll left bottom #444444;}
+#andreassen{background: url("../img/andreassen.jpg") no-repeat scroll left bottom #444444;}
+#ulvin{background: url("../img/ulvin.jpg") no-repeat scroll left bottom #444444;}
+#orange{background: url(../img/orange.jpg) no-repeat scroll left bottom #444444;}
+#forskning{background: url(../img/forskning.jpg) no-repeat scroll left bottom #444444;}
+#tiago{background: url(../img/tiago.jpg) no-repeat scroll left bottom #444444;}
+#tonan{background: url(../img/tonan.jpg) no-repeat scroll left bottom #444444;}
+#agnes{background: url(../img/agnes.jpg) no-repeat scroll left bottom #444444;}
+#leo{background: url(../img/leo.jpg) no-repeat scroll left bottom #444444;}
+#veronica{background: url(../img/veronica.jpg) no-repeat scroll left bottom #444444;}
+#heine{background: url(../img/heine.jpg) no-repeat scroll left bottom #444444;}
+#overraskelse{background: url(../img/overraskelse.jpg) no-repeat scroll left bottom #444444;}
+#lysbilde{background: url(../img/lysbilde.jpg) no-repeat scroll left bottom #444444;}
+#visjon{background: url(../img/visjontrekant.jpg) no-repeat scroll left bottom #444444;}
+#bestillingsverktrekant{background: url(../img/bestillingsverktrekant.jpg) no-repeat scroll left bottom #444444;}
+
+
+#bidragsytere {
+    display: block;
+    position: relative;
+    top: 250px;
+    padding-bottom: 20px;
+}
+
+.jegvilhapakken{
+width: 235px;
+height: 72px;
+background: url(../img/jegvilhapakken.png) no-repeat top left;
+text-indent: -99999px;
+display: block;
+top: 0px;
+position: relative;
+}
+
+.facebook{
+width: 235px;
+height: 72px;
+background: url(../img/facebook.png) no-repeat top left;
+text-indent: -99999px;
+display: block;
+top: 0px;
+position: relative;
+}
+
+.jegvilhapakken:hover{
+background: url(../img/jegvilhapakken.png) no-repeat left -83px;
+}
+
+.facebook:hover{
+background: url(../img/facebook.png) no-repeat left -83px;
+}
+
+#menyBestilling, #facebook{
+top: -100px;
+position: relative;
+}
+
+.pamelding{
+width: 235px;
+height: 72px;
+background: url(../img/pamelding.png) no-repeat top left;
+text-indent: -99999px;
+display: block;
+top: 0px;
+position: relative;
+}
+
+.pamelding:hover{
+background: url(../img/pamelding.png) no-repeat left -83px;
+}
+
+#pameldingBestilling{
+top: 0px;
+position: relative;
+margin-bottom: 40px;
+}
+
+
+
+
+#workshopmeny {
+    float: right;
+    position: relative;
+    right: -20px;
+    top: -59px;
+}
+
+#workshopmeny li{
+list-style: none outside none;
+display: inline;
+}
+
+#workshopmeny a{
+    background: none repeat scroll 0 0 #444444;
+        color: white;
+        text-decoration: none;
+            -webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-top-radius: 2px;
+border-top-radius: 2px;
+z-index: 0;
+padding: 5px;
+box-shadow: 0 1px 3px 1px rgba(0,0,0,0.5);
+}
+
+#workshopmeny a:hover, #workshopmeny .active{
+background: #ffad60;
+}
+
+.active{
+color: white !important;
+}
+
+#skjema p{
+font-size: 90%;
+margin-bottom: 20px;
+}
+
+#skjema input{
+float: left;
+}
+
+#skjema span{
+float: left;
+}
+
+.linje {
+    height: 52px;
+    margin-top: 20px;
+    width: 200px;
+}
+
+#sponsorer{
+float: right;
+min-width: 300px;
+    background: none repeat scroll 0 0 #444444;
+margin-top: 500px;
+padding: 27px;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,0.5);
+        border: solid 1px #383838;
+    border-top: solid 1px #4C4C4C;
+}
+
+#sponsorer img{
+padding: 20px;
+}
+
+#sponsorer span{
+display: block;
+position: relative;
+top: 1px;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 130%;
+    color: white;
+    
+}
+
+.siste{
+border-bottom: 0px !important;
+}
+
+#pakken h2{
+margin-top: 20px;
+}
+
+/**
+ * Non-semantic helper classes: please define your styles before this section.
+ */
+
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+
+/**
+ * Media queries for responsive design.
+ *
+ * These follow after primary styles so they will successfully override.
+ */
+ 
+ @media screen and (max-width: 1000px) {
+#main {
+    display: block;
+    padding-left: 20px !important;
+    padding-top: 21px;
+    position: relative !important;
+    z-index: 0;
+}
+
+#header{
+position: relative !important;
+}
+
+
+#pakken{ top:0px;}
+ #dogmer, #workshops, #festivaler, #kit, #bestilling, #muligheter{ display: none;}
+
+#skjema{
+top: 0px;
+}
+
+#tidslinje{
+top: 0px;
+}
+
+}
+
+
+
+@media all and (orientation:portrait) {
+  /* Style adjustments for portrait mode goes here */
+
+}
+
+@media all and (orientation:landscape) {
+  /* Style adjustments for landscape mode goes here */
+
+}
+
+
+
+
+/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
+   consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+
+
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+/**
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
+
+
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on May 12, 2011 08:40:58 AM America/New_York */
+
+
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('font/League_Gothic-webfont.eot');
+    src: url('font/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/League_Gothic-webfont.woff') format('woff'),
+         url('font/League_Gothic-webfont.ttf') format('truetype'),
+         url('font/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on May 12, 2011 */
+
+
+
+@font-face {
+    font-family: 'RalewayThin';
+    src: url('font/raleway_thin-raleway.eot');
+    src: url('font/raleway_thin-raleway.eot?#iefix') format('embedded-opentype'),
+         url('font/raleway_thin-raleway.woff') format('woff'),
+         url('font/raleway_thin-raleway.ttf') format('truetype'),
+         url('font/raleway_thin-raleway.svg#RalewayThin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
